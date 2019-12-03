@@ -13,9 +13,9 @@ interval <- crossing(date = days, hr = hours) %>%
 
 # adjust for DST --------------------------------------------------------------------------------------------------
 
-dst_start <- ymd('2019-03-17')
+dst_start <- ymd('2019-03-10')
 dst_end <- ymd('2019-11-03')
-dst_hr <- 3
+dst_hr <- 2
 
 is_daylight_savings <- function(df) {
   is_dst <- ((df$date > dst_start) | (df$date == dst_start & df$hr >= dst_hr)) &
